@@ -846,7 +846,7 @@ static wasm_trap_t *gl_shader_source_cb(
         fprintf(stderr, "More than 1 shader, not implemented!");
     }
 
-    const char** system_source_arr_ptr = (const char **) (wasmtime_memory_data(env_data->context, &env_data->memory) + wasm_source_arr_ptr);
+    char** system_source_arr_ptr = (char **) (wasmtime_memory_data(env_data->context, &env_data->memory) + wasm_source_arr_ptr);
     const char* wasm_source_ptr = system_source_arr_ptr[0];
     char* system_source_ptr = (char*) (wasmtime_memory_data(env_data->context, &env_data->memory) + (intptr_t) wasm_source_ptr);
 //    system_source_arr_ptr[0] = system_source_ptr;
